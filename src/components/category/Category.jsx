@@ -1,26 +1,39 @@
 import React from "react";
 import data from "../db.json";
-import Category2 from "../category/Category2"
-import Category3 from "./Category3";
-import Category4 from "./Category4";
-import Category5 from "./Category5";
-import ProductList from "../ProductList";
+import Card from "../common/Card";
+
 const Category = () => {
   return (
     <>
       <div className="flex w-full">
         {data.middlesections1.map((e) => (
-          <div key={e.id}>
-            <img src={e.url} alt="" />
-          </div>
+          <Card key={e.id} url={e.url} />
         ))}
       </div>
-      {/* <ProductList/> */}
-      <Category2/>
-      <Category3/>
-      <Category4/>
-      <Category5/>
       
+      <div className="flex mt-10 w-full">
+        {data.middlesections2.map((e) => (
+          <Card key={e.id} url={e.url} />
+        ))}
+      </div>
+
+      <div className="flex mt-10 w-full">
+        {data.middlesections3.map((e) => (
+          <Card key={e.id} url={e.url} />
+        ))}
+      </div>
+
+      <div className="flex mt-10 w-full">
+        {data.middlesections4.map((e) => (
+          <Card key={e.id} url={e.url} />
+        ))}
+      </div>
+
+      <div className="flex mt-10 w-full">
+        {data.middlesections5.map((e) => (
+          <Card key={e.id} url={e.url} />
+        ))}
+      </div>
     </>
   );
 };
